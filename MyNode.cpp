@@ -34,15 +34,7 @@ std::string MyNode::getName() const
 
 void MyNode::setNumConnections(unsigned int numConnections)
 {
-    if (numConnections > 0)
-    {
-        std::unique_ptr< std::list<MyEdge> > connections(new std::list<MyEdge>);
-        m_connections = std::move(connections);
-    }
-    else
-    {
-        m_connections = 0;
-    }
+    m_connections.reset(new std::list<MyEdge>);
 }
 
 void MyNode::addConnection(std::string edgeTo, unsigned int weight)
