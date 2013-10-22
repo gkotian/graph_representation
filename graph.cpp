@@ -37,11 +37,6 @@ int main()
         std::cout << "    number of edges originating from " << name << ": ";
         std::cin >> numConnectedNodes;
 
-        if (numConnectedNodes > 0)
-        {
-            v[i].setNumConnections(numConnectedNodes);
-        }
-
         for (unsigned int j = 0; j < numConnectedNodes; ++j)
         {
             std::string edgeTo;
@@ -62,4 +57,3 @@ int main()
 
     return 0;
 }
-
